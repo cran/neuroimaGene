@@ -4,6 +4,8 @@
 #' @param ng_obj NeuroimaGene Object
 #' @param maxNidps maximum number of NIDPs to visualize. default=30
 #' @param title optional title tag for the plot
+#' @param shortnames optional boolean tag for simplified names. Default to TRUE
+#' @param mag boolean to present effect sizes by magnitude rather than as a vector. Default to TRUE
 #' @param verbose print runtime messages to R console. Default to FALSE
 #' @keywords neuroimaging
 #' @export
@@ -14,9 +16,9 @@
 #' ng <- neuroimaGene(gene_list, atlas = NA, mtc = 'BH', vignette = TRUE)
 #' plot_nidps(ng)
 #'
-plot_nidps <- function(ng_obj, maxNidps = 30, title = NA, verbose = FALSE) {
+plot_nidps <- function(ng_obj, maxNidps = 30, title = NA, shortnames = TRUE, mag = TRUE, verbose = FALSE) {
   # initialize column names as null variables
-  zscore <- meanZ <- gwas_phenotype <- secondary <- NULL
+  zscore <- meanZ <- gwas_phenotype <- secondary <- NIDP <- NULL
 
   if(is.na(title)){
     tag <- ''
@@ -37,15 +39,28 @@ plot_nidps <- function(ng_obj, maxNidps = 30, title = NA, verbose = FALSE) {
     ng <- ng[gwas_phenotype %in% nidps,]
   }
 
-  gn_plot <- ggplot2::ggplot(ng, aes(x = gwas_phenotype, y = abs(meanZ), color= secondary, group = as.character(sign))) +
+  if(shortnames == FALSE) {
+    ng <- ng[, -c('NIDP')]
+    setnames(ng, 'gwas_phenotype', 'NIDP')
+  }
+
+
+  if(mag == TRUE) {
+    ng$meanZ <- abs(ng$meanZ)
+    axis_label <- 'Normalized effect size magnitude'
+  } else {
+    axis_label = 'Normalized effect size'
+  }
+
+  gn_plot <- ggplot2::ggplot(ng, aes(x = NIDP, y = meanZ, color= secondary, group = as.character(sign))) +
     geom_point(aes(shape=as.character(sign)), size = 4) + #size=as.character(gn_ct))) +
     theme_light()+
     ggtitle(paste0("Mean Effect Size per NIDP across\nall genes", tag)) +
     xlab('NIDPs') +
-    ylab('Normalized effect size magnitude') +
+    ylab(axis_label) +
     theme_light() +
     theme(axis.text.x = element_text(angle = 0, size = 11, hjust = 0.5, vjust =0.5),
-          axis.text.y = element_text(size = 12),
+          axis.text.y = element_text(size = 11),
           plot.title = element_text(hjust = 0.5),
           plot.title.position = "plot",
     ) +
