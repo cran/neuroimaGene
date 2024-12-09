@@ -1,7 +1,7 @@
 Package: neuroimaGene
 Type: Package
 Title: Transcriptomic Atlas of Neuroimaging Derived Phenotypes
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(person("Xavier", "Bledsoe", 
                     email = "xavier.bledsoe@vanderbilt.edu", 
                     role = c("aut", "cre"),
@@ -26,11 +26,11 @@ LazyData: true
 Imports: data.table, ggplot2, DBI, stringr, ggseg, RSQLite
 Depends: R (>= 3.5.0)
 RoxygenNote: 7.3.2
-Suggests: knitr, rmarkdown,
+Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-09-20 13:36:46 UTC; xbledsoe
+Packaged: 2024-12-09 03:06:00 UTC; xbledsoe
 Author: Xavier Bledsoe [aut, cre] (<https://orcid.org/0000-0002-6091-9372>),
   Eric Gamazon [aut] (<https://orcid.org/0000-0003-4204-8734>)
 Repository: CRAN
-Date/Publication: 2024-09-20 14:20:01 UTC
+Date/Publication: 2024-12-09 05:30:02 UTC

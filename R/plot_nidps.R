@@ -32,7 +32,6 @@ plot_nidps <- function(ng_obj, maxNidps = 30, title = NA, shortnames = TRUE, mag
                 by = c('gwas_phenotype')]
 
   ng <- data.table::setDT(merge(ng_summ, anno, by = 'gwas_phenotype'))
-
   if (length(unique(ng$gwas_phenotype)) > maxNidps ) {
     if(verbose){message(paste('WARNING: Greater than', maxNidps, 'NIDPs detected in input data. Plot will only show the top', maxNidps, 'NIDPs ranked by effect size magnitude'))}
     nidps <- ng[order(-abs(meanZ))][1:maxNidps,]$gwas_phenotype
@@ -43,15 +42,15 @@ plot_nidps <- function(ng_obj, maxNidps = 30, title = NA, shortnames = TRUE, mag
     ng <- ng[, -c('NIDP')]
     setnames(ng, 'gwas_phenotype', 'NIDP')
   }
-
-
+  
+  
   if(mag == TRUE) {
     ng$meanZ <- abs(ng$meanZ)
     axis_label <- 'Normalized effect size magnitude'
   } else {
     axis_label = 'Normalized effect size'
   }
-
+  
   gn_plot <- ggplot2::ggplot(ng, aes(x = NIDP, y = meanZ, color= secondary, group = as.character(sign))) +
     geom_point(aes(shape=as.character(sign)), size = 4) + #size=as.character(gn_ct))) +
     theme_light()+

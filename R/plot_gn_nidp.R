@@ -18,7 +18,7 @@
 #'
 plot_gnNIDP <- function(ng_obj, maxNidps = 20, maxGns = 15, title = NA, shortnames = TRUE, verbose = FALSE) {
   # initialize column names as null variables
-  zscore <- maxZ <- gwas_phenotype <- gene_name <- training_model <- tm_ct <- NIDP <- NULL
+  zscore <- maxZ <- gwas_phenotype <- gene_name <- NIDP <- training_model <- tm_ct <- NULL
 
   if(is.na(title)){
     tag <- ''
@@ -46,12 +46,12 @@ plot_gnNIDP <- function(ng_obj, maxNidps = 20, maxGns = 15, title = NA, shortnam
   ng <- data.table::setDT(merge(ng_obj, anno, by = 'gwas_phenotype'))
   gn_nidp <- ng[, list(tm_ct = length(unique(training_model))),
                 by = c('gene_name', 'gwas_phenotype', 'NIDP')]
-
+  
   if(shortnames == FALSE) {
     gn_nidp <- gn_nidp[, -c('NIDP')]
     setnames(gn_nidp, 'gwas_phenotype', 'NIDP')
   }
-
+  
   gn_plot <- ggplot2::ggplot(gn_nidp, aes(x = gene_name, y = NIDP, fill = tm_ct)) +
     geom_tile(color = 'white') +
     theme_light()+
