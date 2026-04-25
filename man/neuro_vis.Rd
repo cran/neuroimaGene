@@ -18,11 +18,11 @@ neuro_vis(
 
 \item{atlas}{desired atlas for visualization. Desikan (default), Subcortex, DKT, Destrieux.}
 
-\item{lowcol}{color for low end of Zscore spectrum. Default is dark red}
+\item{lowcol}{color for low end of Zscore spectrum. Default is red}
 
 \item{midcol}{color for middle of Zscore spectrum. Default is white}
 
-\item{highcol}{color for top end of Zscore spectrum. Default is blue4}
+\item{highcol}{color for top end of Zscore spectrum. Default is blue}
 
 \item{title}{optional title tag for the plot}
 }

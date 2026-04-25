@@ -18,7 +18,7 @@
 #'
 plot_gnNIDP <- function(ng_obj, maxNidps = 20, maxGns = 15, title = NA, shortnames = TRUE, verbose = FALSE) {
   # initialize column names as null variables
-  zscore <- maxZ <- gwas_phenotype <- gene_name <- NIDP <- training_model <- tm_ct <- NULL
+  zscore <- maxZ <- gwas_phenotype <- gene_name <- training_model <- tm_ct <- NIDP <- NULL
 
   if(is.na(title)){
     tag <- ''

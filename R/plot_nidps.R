@@ -32,6 +32,7 @@ plot_nidps <- function(ng_obj, maxNidps = 30, title = NA, shortnames = TRUE, mag
                 by = c('gwas_phenotype')]
 
   ng <- data.table::setDT(merge(ng_summ, anno, by = 'gwas_phenotype'))
+  utils::head(ng)
   if (length(unique(ng$gwas_phenotype)) > maxNidps ) {
     if(verbose){message(paste('WARNING: Greater than', maxNidps, 'NIDPs detected in input data. Plot will only show the top', maxNidps, 'NIDPs ranked by effect size magnitude'))}
     nidps <- ng[order(-abs(meanZ))][1:maxNidps,]$gwas_phenotype

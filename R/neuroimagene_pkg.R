@@ -40,13 +40,14 @@ neuroimaGene <- function(gene_list, modality='T1', atlas='Desikan', mtc='BH', ni
 
   # check to see if neuroimaGene database has been downloaded and prompt user to download
   pkg_dir <- system.file(package = "neuroimaGene")
-  db_path <- file.path(pkg_dir, "extdata", "neuroimaGenefast.db")
+  db_path <- file.path(pkg_dir, "extdata", "NeuroimaGenefast.db")
   if (!file.exists(db_path)) {
     check_db()
     }
 
   if (modality %in% c('all', 'All')){ modality <- NA}
   if (atlas %in% c('all', 'All')){ atlas <- NA}
+  if (atlas %in% c('Subcortex', 'subcorted', 'aseg_vol')){atlas <- 'aseg_volume'}
 
     if (!identical(nidps, NA)) {
     typ <- 'all'
