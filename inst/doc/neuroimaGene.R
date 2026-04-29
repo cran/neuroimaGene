@@ -24,7 +24,7 @@ plot_nidps(ng, maxNidps = 20)
 plot_gnNIDP(ng, maxNidps = 20, maxGns = 15)
 
 
-## ----fig.asp = 0.4, fig.width = 6, out.width = "80%"--------------------------
+## ----fig.asp = 1, fig.width = 6, out.width = "80%"----------------------------
 neuro_vis(ng, atlas = 'Desikan', lowcol = 'darkred', midcol = 'white', highcol = 'blue4')
 
 neuro_vis(ng, atlas = 'Subcortex', lowcol = 'darkgreen', midcol = 'yellow2', highcol = 'darkorange')

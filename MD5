@@ -1,8 +1,8 @@
-992605991ab88b6bf12b19786d707cb6 *DESCRIPTION
-5d052d5f405e6cfc785fb6d62e556fee *NAMESPACE
+35ab3e3cebda85c6c51cd02ac5c2f283 *DESCRIPTION
+7cc253fc4e473dc623e4f46ae0706a92 *NAMESPACE
 c8ca3749bb03ac339a5db5396e021b56 *R/NIDP_names.R
 482a0b081f9ab7310bd007add0c7b482 *R/anno_doc.R
-7fc158d18d3baeeec50b42de982c75e6 *R/check_db.R
+7b35f4f156e57bfcc4f089b2c44fd650 *R/check_db.R
 dc0a15c909503456f2b65a225cd50dcf *R/fs_anno_doc.R
 c1c6a4f6d8c2a2c07303faad52f8f440 *R/neuro_vis.R
 5f377d1d4a71940cda12387e3cc46bf7 *R/neuroimagene_pkg.R
@@ -16,13 +16,13 @@ d05e4ab2046de4cdb08fd2fdbd1c57d2 *data/fs_anno.rda
 28c7d75cb7349b369ad9d3a889ff7f31 *data/ng_vignette.rda
 d38c08148c4a2aadc80695d972f348ec *data/nidp_anno.RData
 1cebbc4d3635bc15b0c428882afb50c1 *inst/CITATION
-1b2e775ce59940de11e70195ad976bf6 *inst/doc/neuroimaGene.R
-66aaeae97ace370a5fbe271667069027 *inst/doc/neuroimaGene.Rmd
-765ec723cefcda4bdc52df00f0dea010 *inst/doc/neuroimaGene.html
+6798945ddc0ccb2d3f17eaba442a7f6c *inst/doc/neuroimaGene.R
+b80f1eb2a8efec5fb09cde70921c5749 *inst/doc/neuroimaGene.Rmd
+e4fc2e75a694b4136114a4206e6a74eb *inst/doc/neuroimaGene.html
 7d2c72b5941bf4873d06c1baa7ddb96a *inst/extdata/dest_atlas_new.rda
 12001673c190faf4828afeb171cb72fd *inst/extdata/dkt_atlas_new.rda
 a37c7d158b4c0d67d52d79b6c0354e5d *man/anno.Rd
-0410801ac58d117fb5f76efa23250cd2 *man/check_db.Rd
+aa3c6dde32deaaafab32cbd28e1ea790 *man/check_db.Rd
 7bfe38e946b216d7d9966bc6e9fde119 *man/fs_anno.Rd
 2ca8852360cd801e806171bd1993697e *man/listNIDPs.Rd
 bba839cd6b3ad5f9ec30a126170ad8cc *man/neuro_vis.Rd
@@ -31,5 +31,5 @@ f26c982e29409935e4d9bc5ac76c02b6 *man/neuroimaGene.Rd
 2c99656ef2e46922358908d677d6254c *man/plot_gnNIDP.Rd
 7e66ab05ab20627ff0c3294402ed8315 *man/plot_gns.Rd
 fbe9d2269c177c4d51b7ff3ae904482b *man/plot_nidps.Rd
-66aaeae97ace370a5fbe271667069027 *vignettes/neuroimaGene.Rmd
+b80f1eb2a8efec5fb09cde70921c5749 *vignettes/neuroimaGene.Rmd
 ff6ea1ea56661bb9c61becf7b74ee28b *vignettes/vis_abstract.png

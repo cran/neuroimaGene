@@ -4,10 +4,12 @@
 \alias{check_db}
 \title{Check neuroimaGene database downloaded}
 \usage{
-check_db(timeout = 900)
+check_db(timeout = 900, localdb = NA)
 }
 \arguments{
 \item{timeout}{time to spend downloading the NeuroimaGene database in seconds (default = 900)}
+
+\item{localdb}{path to local copy of NeuroimaGenefast.db file (default = NA)}
 }
 \value{
 no return value, called to give information on status of neuroimaGene
